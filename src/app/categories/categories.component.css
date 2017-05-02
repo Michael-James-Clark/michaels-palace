@@ -1,0 +1,14 @@
+#categoryBoard {
+    margin-top: 60px;
+}
+.panel {
+    -webkit-box-shadow: -8px 8px 15px -8px rgba(0,0,0,0.53);
+    -moz-box-shadow: -8px 8px 15px -8px rgba(0,0,0,0.53);
+    box-shadow: -8px 8px 15px -8px rgba(0,0,0,0.53);
+    border: none;
+}
+.panel-heading {
+    background-color: rgb(230, 230, 230);
+ 
+    
+}
