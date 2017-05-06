@@ -1,8 +1,12 @@
-<div id="categoryBoard">
-  <div *ngFor="let category of categories" class="panel">
-    <div class="panel-heading"><h3><a [routerLink]="['/category', category._id]">{{category.name}}</a></h3></div>
-    <div class="panel-body">
-      {{category.description}}
-    </div>
+<section id="categoryBoard" class="container">
+  <h1>Browse Categories: </h1>
+  <div *ngFor="let category of categories">
+    <md-card>
+      <md-card-header>
+        <md-card-title><h2><a [routerLink]="['/category', category._id]">{{category.name}}</a></h2></md-card-title>
+        <md-card-subtitle><p>{{category.description}}</p></md-card-subtitle>
+      </md-card-header>
+    </md-card>
+    <br>
   </div>
-</div>
+</section>

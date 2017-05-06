@@ -1,7 +1,6 @@
 var jwt = require('jsonwebtoken');
 
 module.exports = function(req, res, next){
-    console.log(req.headers['id_token']);
     if (!req.headers['id_token']){
         return res.status(400).send('Please send a valid token with your request!');
     }

@@ -38,7 +38,7 @@ export class UserLoginComponent implements OnInit {
       if(data.success)
       {
         this._authService.storeUserData(data.token, data.user);
-        this._flash.show('You have succesfully logged in!', { cssClass: 'alert-success', timeout: 5000 });
+        this._flash.show('You have succesfully logged in!', {cssClass: 'flash-success', timeout: 5000 });;
         this.router.navigate(['']);
       }
 

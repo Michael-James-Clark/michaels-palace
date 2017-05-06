@@ -8,7 +8,7 @@ var app = express();
  
 app.use(cors());
 process.env.APP_SECRET = "super secret secret";
-mongoose.connect('databasedetails').then(
+mongoose.connect('DB-INFORMATION-HERE').then(
   () => { console.log('Connected to DB!')},
   err => { console.error(err)}
 );

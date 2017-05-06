@@ -1,0 +1,66 @@
+<div class="container">
+  <md-card *ngIf="thread">
+    <div class="title">
+      <h2>{{thread.title}}</h2>
+    </div>
+    <h3>{{thread.username}}</h3>
+    <p>
+      {{thread.body}}
+    </p>
+  </md-card>
+  <br>
+  <div id="signup-login">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <md-card>
+          <md-card-header>
+            <md-card-title><h3>Would you like to reply?</h3></md-card-title>
+          </md-card-header>
+          <md-card-content>
+              <md-input-container class="full-width" name="post" [(ngModel)]="post" ngDefaultControl>
+                <textarea mdInput placeholder="Reply to this thread"></textarea>
+              </md-input-container>
+              <br>
+              <button md-raised-button color="warn" (click)="postToThread(thread._id)">Post Comment</button>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+  <br>  
+  
+  <div *ngIf="posts">
+    <md-card class="example-card" *ngFor="let post of posts">
+      <md-card-header>
+        <div md-card-avatar>
+          <md-icon md-list-icon>person</md-icon>
+        </div>
+        <md-card-title>{{post.username}} commented: </md-card-title>
+      </md-card-header>
+      <md-card-content>
+        <p>{{post.body}}</p>
+        <div *ngFor="let reply of post.replies">
+          <md-card>
+              <md-card-header>
+                <div md-card-avatar>
+                  <md-icon md-list-icon>person</md-icon>
+                </div>
+                <md-card-title>{{reply.name}}</md-card-title>
+              </md-card-header>
+            <md-card-content>    
+              <p>
+                {{reply.reply}}
+              </p>
+            </md-card-content>
+          </md-card>
+        </div>
+        <p>
+          <md-input-container name="input" [(ngModel)]="input" ngDefaultControl>
+            <textarea mdInput placeholder="Reply to this comment"></textarea>
+          </md-input-container>
+        </p>
+      </md-card-content>
+      <button (click)="reply(post._id)"  md-raised-button color="warn">reply</button>
+    </md-card>
+  </div>
+</div>

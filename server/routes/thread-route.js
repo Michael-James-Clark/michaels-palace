@@ -7,5 +7,6 @@ router.post('/create-thread', auth, threadController.createThread);
 
 //get
 router.get('/get-threads-by-category', threadController.getThreadsByCategory);
+router.get('/get-threads', threadController.getThreads);
 
 module.exports = router;

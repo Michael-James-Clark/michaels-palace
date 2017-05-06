@@ -1,3 +1,32 @@
-body {
-    background-color: rgb(200, 200, 200);
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: #ECF0F1;
+}
+
+
+.container {
+	width: 95%;
+	max-width: 2000px;
+    margin: 0 auto;
+}
+.form-group {
+    padding: 3px;
+}
+
+.form-group input {
+    padding: 3px;
+}
+.form-group textarea {
+    padding: 5px;
+}
+
+.flash-success {
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto;
+    color: #ecf0f1;
+    background-color: #d35400;
+    max-width: 400px;
+    overflow: hidden;
 }

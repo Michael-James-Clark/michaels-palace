@@ -1,33 +1,25 @@
-<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a [routerLink]="['']" class="navbar-brand">Michael's Palace</a>
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav pull-right">
-                    <li *ngIf="!_authService.loggedIn()" [routerLinkActive]="['active']">
-                        <a [routerLink]="['/register']">Signup/Login</a>
-                    </li>
-                    <li [routerLinkActive]="['active']">
-                        <a [routerLink]="['/categories']">Categories</a>
-                    </li>
-                    <li [routerLinkActive]="['active']">
-                        <a>Recent Threads</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+<md-toolbar color="primary">
+        <a [routerLink]="['']" md-button><p>Michael's Palace</p></a>
+        <span class="spacer"></span>
+        <a [routerLink]="['/categories']"md-button>
+            <p>Categories</p>
+        </a>    
+        <button md-button disabled><p>Admin Panel</p></button>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>portrait</md-icon>
+        </button>
+        <md-menu #menu="mdMenu">
+        <a [routerLink]="['/register']" md-menu-item *ngIf="!_authService.loggedIn()">
+            <md-icon icon-20> person </md-icon>
+            <span> Login/Signup </span>
+        </a>
+        <button md-menu-item disabled *ngIf="_authService.loggedIn()">
+            <md-icon> mood </md-icon>
+            <span> Profile </span>
+        </button>
+        <button (click)="logout()" md-menu-item *ngIf="_authService.loggedIn()">
+            <md-icon> person outline </md-icon>
+            <span> Logout </span>
+        </button>    
+        </md-menu>
+</md-toolbar>
