@@ -1,5 +1,23 @@
 # Michaels-Palace
 
+
+
+Changelog:
+  6th May 2017:
+    Full CRUD capabilities
+    Allowed users to create threads and posts
+    More work done to templates
+  5th May 2017:
+    Added limited reply chaining
+    More work done to templates
+  4th May 2017:
+    Installed Angular Material
+    Converted design to flat
+    Created reply schema
+
+
+
+////
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
