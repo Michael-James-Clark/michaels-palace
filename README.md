@@ -5,11 +5,13 @@ Changelog:
 - Updates to design
 - Allowed user to create posts and threads
 - Changes to templates
-5th May 2017
+
+5th May 2017:
 - Changes to templates
 - Limited reply chaining
 - Reply Schema defined and created
-4th May 2017
+
+4th May 2017:
 - Converted design to flat
 - Installed Angular Material2
 
